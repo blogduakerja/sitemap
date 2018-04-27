@@ -1,0 +1,11 @@
+
+<style type='text/css'>li.recent-posts:nth-child(1){border-top-width:1px!important}li.recent-posts{margin:0!important;padding:8px 10px!important;position:relative;border:1px solid #d6dee4;border-top-width:0;border-left-width:4px;border-left-color:#fd745c;font-size:14px}li.recent-posts a {font-weight: 400!important;display: block;text-decoration: none!important;line-height: 1.4em!important;padding-right: 8px!important;}</style>
+<ul id="recent-posts"></ul>
+<script async='async' type='text/javascript'>
+//<![CDATA[
+var mql = window.matchMedia('screen and (min-width: 600px)');if (mql.matches){
+var homePage = "//www.duakerja.com/",
+numPosts = 7;
+function recentPosts(a){if(document.getElementById("recent-posts")){var e=a.feed.entry,title,link,content="",ct=document.getElementById("recent-posts");for(var i=0;i<numPosts;i++){for(var j=0;j<numPosts;j++){if(e[i].link[j].rel=="alternate"){link=e[i].link[j].href;break}}var title=e[i].title.$t;content+='<li class="recent-posts"><a href="'+link+'" title="'+title+'" target="_self">'+title+'</a></li>'}ct.innerHTML=content}}var rcp=document.createElement('script');rcp.src=homePage+'/feeds/posts/summary?alt=json-in-script&orderby=published&max-results='+numPosts+'&callback=recentPosts';document.getElementsByTagName('head')[0].appendChild(rcp);}
+//]]>
+</script>
